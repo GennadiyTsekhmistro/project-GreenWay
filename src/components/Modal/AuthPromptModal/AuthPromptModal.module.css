@@ -125,3 +125,75 @@
   line-height: 150%;
   color: #fff;
 }
+
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 64px;
+    width: 704px;
+    height: 348px;
+  }
+
+  .text {
+    width: 576px;
+    height: 140px;
+  }
+
+  .title {
+    width: 576px;
+    height: 76px;
+    font-size: 32px;
+  }
+
+  .description {
+    width: 576px;
+    height: 48px;
+  }
+
+  .buttons {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 430px;
+    height: 48px;
+  }
+
+  .loginButton {
+    width: 203px;
+  }
+
+  .registerButton {
+    width: 203px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal {
+    width: 768px;
+    height: 400px;
+  }
+
+  .text {
+    width: 640px;
+    height: 192px;
+  }
+
+  .title {
+    width: 640px;
+    height: 116px;
+    font-size: 48px;
+  }
+
+  .description {
+    width: 640px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .loginButton {
+    font-size: 20px;
+  }
+
+  .registerButton {
+  font-size: 20px;
+}
+}

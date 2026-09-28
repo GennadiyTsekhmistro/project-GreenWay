@@ -77,7 +77,7 @@ export default function AddReviewForm({ onClose }: AddReviewFormProps) {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form>
+        <Form className={styles.form}>
           <div className={styles.reviewField}>
             <label className={styles.reviewLabel} htmlFor="review">
               Ваш відгук

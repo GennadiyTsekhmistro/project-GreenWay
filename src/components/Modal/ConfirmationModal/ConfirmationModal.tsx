@@ -1,66 +1,97 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+
+import styles from "./ConfirmationModal.module.css";
 
 type ConfirmationModalProps = {
   title: string;
+  description: string;
   confirmButtonText: string;
   cancelButtonText: string;
-  onConfirm: () => void;
+  onConfirm: () => Promise<void> | void;
   onCancel: () => void;
-  isLoading?: boolean;
 };
 
 export default function ConfirmationModal({
   title,
+  description,
   confirmButtonText,
   cancelButtonText,
   onConfirm,
   onCancel,
-  isLoading = false,
 }: ConfirmationModalProps) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && !isLoading) {
+        onCancel();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onCancel, isLoading]);
+
+  const handleConfirm = async () => {
+    try {
+      setIsLoading(true);
+
+      await onConfirm();
+
+      onCancel();
+    } catch (error) {
+      console.error("Confirmation request failed:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div>
-      <nav>
-        <div>
-          {/* Логотип компанії */}
-          <div>
-            <Image
-              src="/logo.svg"
-              alt="Логотип компанії"
-              width={121}
-              height={29}
-            />
-          </div>
-
-          {/* Навігація */}
-          <div>
-            <Link href="/">Головна</Link>
-            <Link href="/places">Місця відпочинку</Link>
-          </div>
-
-          {/* Кнопки */}
-          <div>
-            <button type="button">Вхід</button>
-            <button type="button">Реєстрація</button>
-          </div>
-        </div>
-      </nav>
-
-      <div>
-        <button type="button" onClick={onCancel} disabled={isLoading}>
-          ×
+    <div
+      className={styles.backdrop}
+      onClick={!isLoading ? onCancel : undefined}
+    >
+      <div
+        className={styles.modal}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          className={styles.closeButton}
+          onClick={onCancel}
+          disabled={isLoading}
+          aria-label="Закрити"
+        >
+          <Image src="/icons/close.svg" alt="" width={24} height={24} />
         </button>
 
-        <h2>{title}</h2>
+        <div className={styles.text}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.description}>{description}</p>
+        </div>
 
-        <div>
-          <button type="button" onClick={onCancel} disabled={isLoading}>
+        <div className={styles.buttons}>
+          <button
+            type="button"
+            className={styles.cancelButton}
+            onClick={onCancel}
+            disabled={isLoading}
+          >
             {cancelButtonText}
           </button>
 
-          <button type="button" onClick={onConfirm} disabled={isLoading}>
+          <button
+            type="button"
+            className={styles.confirmButton}
+            onClick={handleConfirm}
+            disabled={isLoading}
+          >
             {isLoading ? "Завантаження..." : confirmButtonText}
           </button>
         </div>

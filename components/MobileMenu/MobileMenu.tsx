@@ -55,7 +55,7 @@ export default function MobileMenu({ id, isAuthenticated, user, onClose, onLogou
         {isAuthenticated && (
           <>
             <Link className={css.navLink} href="/profile" onClick={onClose}>Мій профіль</Link>
-            <Link className={css.shareLink} href="/locations/add" onClick={onClose}>Поділитись локацією</Link>
+            <Link className={css.shareLink} href="/locations/new" onClick={onClose}>Поділитись локацією</Link>
           </>
         )}
       </nav>
@@ -65,8 +65,8 @@ export default function MobileMenu({ id, isAuthenticated, user, onClose, onLogou
           <UserBar user={user} onLogout={onLogout} />
         ) : (
           <>
-            <Link className={css.loginLink} href="/login" onClick={onClose}>Вхід</Link>
-            <Link className={css.registerLink} href="/register" onClick={onClose}>Реєстрація</Link>
+            <Link className={css.loginLink} href="/sign-in" onClick={onClose}>Вхід</Link>
+            <Link className={css.registerLink} href="/sign-up" onClick={onClose}>Реєстрація</Link>
           </>
         )}
       </div>

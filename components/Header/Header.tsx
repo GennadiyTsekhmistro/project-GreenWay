@@ -43,7 +43,7 @@ export default function Header() {
             {isAuthenticated && (
               <>
                 <Link className={css.navLink} href="/profile">Мій профіль</Link>
-                <Link className={css.shareLink} href="/locations/add">Поділитись локацією</Link>
+                <Link className={css.shareLink} href="/locations/new">Поділитись локацією</Link>
               </>
             )}
           </nav>
@@ -53,8 +53,8 @@ export default function Header() {
               <UserBar user={user} onLogout={openLogout} />
             ) : (
               <>
-                <Link className={css.loginLink} href="/login">Вхід</Link>
-                <Link className={css.registerLink} href="/register">Реєстрація</Link>
+                <Link className={css.loginLink} href="/sign-in">Вхід</Link>
+                <Link className={css.registerLink} href="/sign-up">Реєстрація</Link>
               </>
             )}
           </div>

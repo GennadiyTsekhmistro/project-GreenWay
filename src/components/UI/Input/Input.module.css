@@ -257,3 +257,216 @@
   line-height: 150%;
   color: #b00101;
 }
+
+.select {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 1312px;
+  height: 576px;
+}
+
+.select h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  color: #4c2613;
+}
+
+.selectContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 96px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  padding: 24px;
+  width: 1312px;
+  height: 510px;
+}
+
+.selectPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 8px;
+  width: 560px;
+  height: 43px;
+  background: #ffe5d9;
+}
+
+.selectFilled {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 8px;
+  width: 560px;
+  height: 43px;
+  background: #ffe5d9;
+}
+
+.selectHoverFocus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 16px;
+  border: 1px solid #ffa57a;
+  border-radius: 6px;
+  padding: 8px;
+  width: 560px;
+  height: 43px;
+  background: #ffe5d9;
+}
+
+.selectOpen {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 6px;
+  width: 560px;
+  height: 317px;
+  background: #fff;
+}
+
+.selectOpenFrame {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 16px;
+  border: 1px solid #ffa57a;
+  border-radius: 6px 6px 0 0;
+  padding: 8px;
+  width: 560px;
+  height: 43px;
+  background: #ffe5d9;
+}
+
+.selectOpenList {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #ffa57a;
+  border-left: 1px solid #ffa57a;
+  border-right: 1px solid #ffa57a;
+  border-radius: 0 0 6px 6px;
+  padding: 12px 8px;
+  width: 560px;
+  height: 274px;
+  background: #ffe5d9;
+}
+
+.selectOpenItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  padding: 4px 8px;
+  width: 544px;
+  height: 35px;
+}
+
+.selectOpenItemText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.selectOpenItemActive {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 544px;
+  height: 35px;
+  background: #ffa57a;
+}
+
+.selectOpenItemActiveText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.selectOpenText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.selectOpenFrame img {
+  width: 24px;
+  height: 24px;
+  margin-right: 9.5px;
+}
+
+.selectHoverFocusText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.selectHoverFocus img {
+  width: 24px;
+  height: 24px;
+  margin-right: 9.5px;
+}
+
+.selectFilledText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.selectFilled img {
+  width: 24px;
+  height: 24px;
+  margin-right: 9.5px;
+}
+
+.selectPlaceholderText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c4c4c;
+}
+
+.selectPlaceholder img {
+  width: 24px;
+  height: 24px;
+  margin-right: 9.5px;
+}

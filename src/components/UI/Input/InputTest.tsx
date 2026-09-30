@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import Input from "./Input";
 import styles from "./Input.module.css";
@@ -24,30 +25,84 @@ export default function InputTest() {
           </div>
         </div>
       </div>
+
       <div className={styles.textArea}>
         <h3>Text Area</h3>
+
         <div className={styles.textAreaContent}>
           <textarea
             className={styles.textAreaField}
             placeholder="Type your message..."
           />
+
           <textarea
             className={styles.textAreaFilled}
             value="Example message"
             readOnly
           />
+
           <textarea
             className={styles.textAreaFocused}
             value="Example message"
             readOnly
           />
+
           <div className={styles.textAreaError}>
             <textarea
               className={styles.textAreaErrorField}
               value="Example message"
               readOnly
             />
+
             <div className={styles.textAreaErrorMessage}>Error Text</div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.select}>
+        <h3>Select</h3>
+
+        <div className={styles.selectContent}>
+          <div className={styles.selectPlaceholder}>
+            <span className={styles.selectPlaceholderText}>Select one...</span>
+            <Image src="/icons/Vector.svg" alt="" width={24} height={24} />
+          </div>
+          <div className={styles.selectFilled}>
+            <span className={styles.selectFilledText}>Selected item</span>
+            <Image src="/icons/Vector.svg" alt="" width={24} height={24} />
+          </div>
+          <div className={styles.selectHoverFocus}>
+            <span className={styles.selectHoverFocusText}>Selected item</span>
+            <Image src="/icons/Vector.svg" alt="" width={24} height={24} />
+          </div>
+          <div className={styles.selectOpen}>
+            <div className={styles.selectOpenFrame}>
+              <span className={styles.selectOpenText}>Item 2</span>
+              <Image src="/icons/Vector_up.svg" alt="" width={24} height={24} />
+            </div>
+            <div className={styles.selectOpenList}>
+              <div className={styles.selectOpenItem}>
+                <span className={styles.selectOpenItemText}>Item 1</span>
+              </div>
+
+              <div className={styles.selectOpenItemActive}>
+                <span className={styles.selectOpenItemActiveText}>Item 2</span>
+              </div>
+              <div className={styles.selectOpenItem}>
+                <span className={styles.selectOpenItemText}>Item 3</span>
+              </div>
+
+              <div className={styles.selectOpenItem}>
+                <span className={styles.selectOpenItemText}>Item 4</span>
+              </div>
+              <div className={styles.selectOpenItem}>
+                <span className={styles.selectOpenItemText}>Item 5</span>
+              </div>
+
+              <div className={styles.selectOpenItem}>
+                <span className={styles.selectOpenItemText}>Item 6</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
